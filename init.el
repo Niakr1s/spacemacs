@@ -589,9 +589,12 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
+  ;; show hidden files + group directories first
   (with-eval-after-load 'dired
     (setq dired-listing-switches "-lhva --group-directories-first"))
 
+  ;; mode-line configuration
   (spaceline-toggle-minor-modes-off)
   (spaceline-define-segment buffer-id
     (if (buffer-file-name)
