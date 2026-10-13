@@ -52,6 +52,7 @@ This function should only modify configuration layer settings."
      version-control
      treemacs
      helpful
+     llm-client
 
      ;; My packages
      chezmoi
@@ -601,6 +602,26 @@ before packages are loaded."
         (abbreviate-file-name (buffer-file-name))
       (powerline-buffer-id)))
   (setq doom-modeline-buffer-file-name-style 'truncate-nil)
+
+  ;; gptel config
+  (setq gptel-models
+        '(
+          "Qwen3.8-27B"
+          "Qwen3.6-35B-A3B"
+          "Gemma4-26B-A4B"
+          "Gemma4-E4B"
+          ))
+
+  (setq gptel-model 'Qwen3.6-35B-A3B)
+  (setq gptel-backend
+        (gptel-make-openai "llama.cpp"
+          :host "localhost:9931"
+          :endpoint "/v1/chat/completions"
+          :protocol "http"
+          :stream t
+          :key "sk-no-key-required"
+          :models gptel-models
+          ))
   )
 
 
