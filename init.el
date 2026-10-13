@@ -591,6 +591,11 @@ before packages are loaded."
   (with-eval-after-load 'dired
     (setq dired-listing-switches "-lhva --group-directories-first"))
 
+  (spaceline-toggle-minor-modes-off)
+  (spaceline-define-segment buffer-id
+    (if (buffer-file-name)
+        (abbreviate-file-name (buffer-file-name))
+      (powerline-buffer-id)))
   )
 
 
