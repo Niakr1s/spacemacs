@@ -236,7 +236,7 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '(
-                               "Iosevka NFM"
+                               "Iosevka NF"
                                :size 12.0
                                :weight normal
                                :width normal)
@@ -588,7 +588,6 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (spaceline-toggle-minor-modes-off)
   )
 
 
