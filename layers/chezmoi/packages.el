@@ -10,10 +10,9 @@
   (use-package chezmoi
     :init
     (package-activate 'chezmoi)
-    (spacemacs/declare-prefix "od" "dotfiles")
+    (spacemacs/declare-prefix "oc" "chezmoi")
     (spacemacs/set-leader-keys
-      "odd" 'chezmoi-diff
-      "odf" 'chezmoi-find
-      "odw" 'chezmoi-write
-      )
-    )
+      "ocd" 'chezmoi-diff
+      "ocf" 'chezmoi-find
+      "ocw" 'chezmoi-write
+      )))
