@@ -55,6 +55,16 @@ This function should only modify configuration layer settings."
      helpful
      llm-client
 
+     (spacemacs-evil :variables
+                     spacemacs-evil-collection-allowed-list
+                     '(
+                       ;; standard
+                       (buff-menu "buff-menu") vundo forge magit vterm evil-ghostel diff-hl bookmark
+                       dired ediff eww info proced process-menu quickrun replace simple
+                       ;; my additions
+                       devdocs
+                       ))
+
      ;; My packages
      chezmoi
      )
