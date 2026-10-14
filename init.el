@@ -602,6 +602,10 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
+  ;; load needed fonts
+  (unless (find-font (font-spec :name "all-the-icons"))
+    (all-the-icons-install-fonts t))
+
   ;; show hidden files + group directories first
   (with-eval-after-load 'dired
     (setq dired-listing-switches "-lhva --group-directories-first"))
