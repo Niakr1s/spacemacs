@@ -596,11 +596,11 @@ before packages are loaded."
     (setq dired-listing-switches "-lhva --group-directories-first"))
 
   ;; mode-line configuration
-  (spaceline-toggle-minor-modes-off)
-  (spaceline-define-segment buffer-id
-    (if (buffer-file-name)
-        (abbreviate-file-name (buffer-file-name))
-      (powerline-buffer-id)))
+  (when (fboundp 'spaceline-toggle-minor-modes-off) (spaceline-toggle-minor-modes-off))
+  (when (fboundp 'spaceline-define-segment) (spaceline-define-segment buffer-id
+                                                                      (if (buffer-file-name)
+                                                                          (abbreviate-file-name (buffer-file-name))
+                                                                        (powerline-buffer-id))))
   (setq doom-modeline-buffer-file-name-style 'truncate-nil)
 
   ;; gptel config
