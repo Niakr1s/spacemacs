@@ -602,6 +602,9 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
+  ;; Set the default Russian method
+  (setq default-input-method "russian-computer")
+
   ;; load needed fonts
   (unless (find-font (font-spec :name "all-the-icons"))
     (all-the-icons-install-fonts t))
