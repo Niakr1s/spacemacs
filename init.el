@@ -623,6 +623,12 @@ before packages are loaded."
           :key "sk-no-key-required"
           :models gptel-models
           ))
+
+  (spacemacs/declare-prefix "od" "devdocs")
+  (spacemacs/set-leader-keys
+    "odp" 'devdocs-peruse
+    "odi" 'devdocs-install
+    )
   )
 
 
